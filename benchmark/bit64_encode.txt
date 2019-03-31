@@ -11,18 +11,21 @@ time: 5 s
 memory time: 0 ns
 parallel: 1
 inputs: none specified
-Estimated total run time: 21 s
+Estimated total run time: 28 s
 
-Benchmarking decode to head...
-Benchmarking decode to tail...
-Benchmarking encode to tail...
+Benchmarking decode bit64...
+Benchmarking decode with base64...
+Benchmarking encode bit64...
+Benchmarking encode with base64...
 
-Name                     ips        average  deviation         median         99th %
-decode to head      551.68 K        1.81 μs  ±1352.91%           2 μs           3 μs
-decode to tail      237.50 K        4.21 μs   ±518.01%           4 μs           8 μs
-encode to tail      227.96 K        4.39 μs   ±294.06%           4 μs           8 μs
+Name                         ips        average  deviation         median         99th %
+decode with base64      720.15 K        1.39 μs  ±2195.93%           1 μs           3 μs
+encode with base64      663.48 K        1.51 μs  ±2012.30%           1 μs           3 μs
+decode bit64            245.22 K        4.08 μs   ±485.04%           4 μs           7 μs
+encode bit64            226.91 K        4.41 μs   ±324.40%           4 μs           9 μs
 
 Comparison: 
-decode to head      551.68 K
-decode to tail      237.50 K - 2.32x slower +2.40 μs
-encode to tail      227.96 K - 2.42x slower +2.57 μs
+decode with base64      720.15 K
+encode with base64      663.48 K - 1.09x slower +0.119 μs
+decode bit64            245.22 K - 2.94x slower +2.69 μs
+encode bit64            226.91 K - 3.17x slower +3.02 μs

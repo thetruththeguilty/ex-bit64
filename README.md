@@ -23,6 +23,42 @@ be found at [https://hexdocs.pm/bit64](https://hexdocs.pm/bit64).
 
 ## Benchmark
 
+compare with base64
+```txt
+Operating System: macOS
+CPU Information: Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
+Number of Available Cores: 12
+Available memory: 16 GB
+Elixir 1.8.1
+Erlang 21.2.7
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 5 s
+memory time: 0 ns
+parallel: 1
+inputs: none specified
+Estimated total run time: 28 s
+
+Benchmarking decode bit64...
+Benchmarking decode with base64...
+Benchmarking encode bit64...
+Benchmarking encode with base64...
+
+Name                         ips        average  deviation         median         99th %
+decode with base64      720.15 K        1.39 μs  ±2195.93%           1 μs           3 μs
+encode with base64      663.48 K        1.51 μs  ±2012.30%           1 μs           3 μs
+decode bit64            245.22 K        4.08 μs   ±485.04%           4 μs           7 μs
+encode bit64            226.91 K        4.41 μs   ±324.40%           4 μs           9 μs
+
+Comparison: 
+decode with base64      720.15 K
+encode with base64      663.48 K - 1.09x slower +0.119 μs
+decode bit64            245.22 K - 2.94x slower +2.69 μs
+encode bit64            226.91 K - 3.17x slower +3.02 μs
+```
+
+compare with base58
 ```txt
 Operating System: macOS
 CPU Information: Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
