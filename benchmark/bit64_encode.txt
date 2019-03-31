@@ -1,0 +1,28 @@
+Operating System: macOS
+CPU Information: Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
+Number of Available Cores: 12
+Available memory: 16 GB
+Elixir 1.8.1
+Erlang 21.2.7
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 5 s
+memory time: 0 ns
+parallel: 1
+inputs: none specified
+Estimated total run time: 21 s
+
+Benchmarking decode to head...
+Benchmarking decode to tail...
+Benchmarking encode to tail...
+
+Name                     ips        average  deviation         median         99th %
+decode to head      551.68 K        1.81 μs  ±1352.91%           2 μs           3 μs
+decode to tail      237.50 K        4.21 μs   ±518.01%           4 μs           8 μs
+encode to tail      227.96 K        4.39 μs   ±294.06%           4 μs           8 μs
+
+Comparison: 
+decode to head      551.68 K
+decode to tail      237.50 K - 2.32x slower +2.40 μs
+encode to tail      227.96 K - 2.42x slower +2.57 μs

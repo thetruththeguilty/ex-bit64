@@ -1,0 +1,53 @@
+Compiling 1 file (.ex)
+Operating System: macOS
+CPU Information: Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
+Number of Available Cores: 12
+Available memory: 16 GB
+Elixir 1.8.1
+Erlang 21.2.7
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 5 s
+memory time: 0 ns
+parallel: 1
+inputs: none specified
+Estimated total run time: 14 s
+
+Benchmarking Base58 encode...
+Benchmarking Base58.BK encode...
+
+Name                       ips        average  deviation         median         99th %
+Base58 encode         737.04 K        1.36 μs  ±2867.98%           1 μs           2 μs
+Base58.BK encode      216.70 K        4.61 μs   ±601.57%           4 μs           6 μs
+
+Comparison: 
+Base58 encode         737.04 K
+Base58.BK encode      216.70 K - 3.40x slower +3.26 μs
+
+
+Operating System: macOS
+CPU Information: Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz
+Number of Available Cores: 12
+Available memory: 16 GB
+Elixir 1.8.1
+Erlang 21.2.7
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 5 s
+memory time: 0 ns
+parallel: 1
+inputs: none specified
+Estimated total run time: 14 s
+
+Benchmarking Base58 decode...
+Benchmarking Base58.BK decode...
+
+Name                       ips        average  deviation         median         99th %
+Base58 decode           1.27 M        0.79 μs  ±2497.81%           1 μs           1 μs
+Base58.BK decode       0.147 M        6.81 μs   ±210.04%           7 μs          11 μs
+
+Comparison: 
+Base58 decode           1.27 M
+Base58.BK decode       0.147 M - 8.64x slower +6.02 μs
