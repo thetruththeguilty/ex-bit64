@@ -8,10 +8,10 @@ encoded64 = "iomKlJrWRBL1yUVIZbj9+LF6HET3JZWU7UGwWz4WAAA="
 
 Benchee.run(%{
   "decode bit64" => (fn ->
-    Bit64.decode_bin! encoded
+    Bit64.decode! encoded
   end),
   "encode bit64" => (fn ->
-    Bit64.encode_bin decoded
+    Bit64.encode decoded
   end),
   "decode with base64" => (fn ->
     Base.decode64! encoded64

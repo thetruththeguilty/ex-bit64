@@ -17,10 +17,10 @@ Benchee.run(%{
     Base58.encode(123456789)
   end),
   "Bit64 encode" => (fn ->
-    Bit64.encode(0)
-    Bit64.encode(57)
-    Bit64.encode(1024)
-    Bit64.encode(123456789)
+    Bit64.encode_number(0)
+    Bit64.encode_number(57)
+    Bit64.encode_number(1024)
+    Bit64.encode_number(123456789)
   end)
 })
 
@@ -32,9 +32,9 @@ Benchee.run(%{
     Base58.decode("bUKpk")
   end),
   "Bit64 decode" => (fn ->
-    Bit64.decode("1")
-    Bit64.decode("Z")
-    Bit64.decode("iE")
-    Bit64.decode("bUKpk")
+    Bit64.decode_number("1")
+    Bit64.decode_number("Z")
+    Bit64.decode_number("iE")
+    Bit64.decode_number("bUKpk")
   end)
 })

@@ -16,20 +16,20 @@ defmodule Bit64Test do
   end
 
   test "bit64 number to char" do
-    assert "a" == (Bit64.decode!("a") |> Bit64.encode)
-    assert "b" == (Bit64.decode!("b") |> Bit64.encode)
-    assert "c" == (Bit64.decode!("c") |> Bit64.encode)
-    assert "w" == (Bit64.decode!("w") |> Bit64.encode)
-    assert "W" == (Bit64.decode!("W") |> Bit64.encode)
-    assert "C" == (Bit64.decode!("C") |> Bit64.encode)
+    assert "a" == (Bit64.decode_number!("a") |> Bit64.encode_number)
+    assert "b" == (Bit64.decode_number!("b") |> Bit64.encode_number)
+    assert "c" == (Bit64.decode_number!("c") |> Bit64.encode_number)
+    assert "w" == (Bit64.decode_number!("w") |> Bit64.encode_number)
+    assert "W" == (Bit64.decode_number!("W") |> Bit64.encode_number)
+    assert "C" == (Bit64.decode_number!("C") |> Bit64.encode_number)
   end
 
   test "bit64 binary to binary" do
-    assert "ac" == (Bit64.encode_bin("ac") |> Bit64.decode_bin!)
-    assert "bw" == (Bit64.encode_bin("bw") |> Bit64.decode_bin!)
-    assert "cww" == (Bit64.encode_bin("cww") |> Bit64.decode_bin!)
-    assert "acc" == (Bit64.encode_bin("acc") |> Bit64.decode_bin!)
-    assert "accw" == (Bit64.encode_bin("accw") |> Bit64.decode_bin!)
-    assert "accww" == (Bit64.encode_bin("accww") |> Bit64.decode_bin!)
+    assert "ac" == (Bit64.encode("ac") |> Bit64.decode!)
+    assert "bw" == (Bit64.encode("bw") |> Bit64.decode!)
+    assert "cww" == (Bit64.encode("cww") |> Bit64.decode!)
+    assert "acc" == (Bit64.encode("acc") |> Bit64.decode!)
+    assert "accw" == (Bit64.encode("accw") |> Bit64.decode!)
+    assert "accww" == (Bit64.encode("accww") |> Bit64.decode!)
   end
 end

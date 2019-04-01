@@ -9,17 +9,17 @@ defmodule Bit64 do
   @doc """
   Encodes the given integer.
   """
-  def encode(x) when is_number(x), do: encode_proc(x, <<>>)
+  def encode_number(x) when is_number(x), do: encode_proc(x, <<>>)
 
   @doc """
   Decodes the given string.
   """
-  def decode!(enc) when is_binary(enc), do: decode_proc(enc, 0)
+  def decode_number!(enc) when is_binary(enc), do: decode_proc(enc, 0)
 
   @doc """
   Decodes the given string, return {:ok, result} or :error
   """
-  def decode(enc) when is_binary(enc) do
+  def decode_number(enc) when is_binary(enc) do
     try do
       {:ok, decode_proc(enc, 0)}
     rescue
@@ -30,26 +30,26 @@ defmodule Bit64 do
   @doc """
   Encode a binary bytes to bit64 binary/string
   """
-  def encode_bin(bytes) when is_binary(bytes) do
+  def encode(bytes) when is_binary(bytes) do
     encode_bin_proc(0, 0, bytes, <<>>)
   end
 
   @doc """
   Decodes a bit64 binary/string, to binary bytes
   """
-  def decode_bin!(enc) when is_binary(enc) do
+  def decode!(enc) when is_binary(enc) do
     decode_bin_proc(0, 0, enc, <<>>)
   end
 
   @doc """
   Decodes a bit64 binary/string, to binary bytes,
   ## Examples
-      iex> Bit64.decode_bin "yw"
+      iex> Bit64.decode "yw"
       {:ok, <<1>>}
-      iex> Bit64.decode_bin <<1>>
+      iex> Bit64.decode <<1>>
       :error
   """
-  def decode_bin(enc) when is_binary(enc) do
+  def decode(enc) when is_binary(enc) do
     try do
       {:ok, decode_bin_proc(0, 0, enc, <<>>)}
     rescue
