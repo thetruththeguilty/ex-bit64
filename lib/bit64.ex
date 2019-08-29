@@ -20,11 +20,9 @@ defmodule Bit64 do
   Decodes the given string, return {:ok, result} or :error
   """
   def decode_number(enc) when is_binary(enc) do
-    try do
-      {:ok, decode_proc(enc, 0)}
-    rescue
-      _err -> :error
-    end
+    {:ok, decode_proc(enc, 0)}
+  rescue
+    _err -> {:error, "decode_char error"}
   end
 
   @doc """
@@ -50,11 +48,9 @@ defmodule Bit64 do
       :error
   """
   def decode(enc) when is_binary(enc) do
-    try do
-      {:ok, decode_bin_proc(0, 0, enc, <<>>)}
-    rescue
-      _err -> :error
-    end
+    {:ok, decode_bin_proc(0, 0, enc, <<>>)}
+  rescue
+    _err -> {:error, "decode_char error"}
   end
 
   #########################

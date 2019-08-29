@@ -32,4 +32,9 @@ defmodule Bit64Test do
     assert "accw" == (Bit64.encode("accw") |> Bit64.decode!)
     assert "accww" == (Bit64.encode("accww") |> Bit64.decode!)
   end
+
+  test "bit64 decode error" do
+    assert {:ok, Bit64.decode!("asdf")} == Bit64.decode("asdf")
+    assert {:error, "decode_char error"} == Bit64.decode("Asdf$")
+  end
 end
